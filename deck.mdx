@@ -1,4 +1,4 @@
-export { default as theme } from './theme'
+export { swiss as theme } from 'mdx-deck/themes'
 
 # Progressive Web Applications: Blending Industries
 ---
@@ -96,6 +96,10 @@ In April of 2018, the first PWA support for windows machines was released to the
 ---
 ## Expelled Skateboarding
 ---
+## Expelled Skateboarding Demo
+
+<iframe width="1000" height="700" src="https://www.youtube.com/embed/FIDP-_xhmj8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+---
 ## Registers a service worker
 Service workers act as a cache for the storage of web files in the browser, preventing the need for files to be downloaded several times on a site.
 
@@ -177,17 +181,43 @@ A ‘background_color’ property has been defined with the site’s primary col
 As well as an icons set at 192px by 192px, 384px by 384px and 512px by 512px.
 ---
 ## Address bar matches brand colours
+Again, the address bar has been set to match the brand colours, setting both the `background_color` and `theme_color` property to `#071930`.
+```
+
+{
+    "name": "Expelled Skateboarding",
+    "short_name": "Expelled",
+    "background_color": "#071930",
+    "theme_color": "#071930",
+    "display": "fullscreen",
+    "start_url": "https://expelledskate.co.uk/",
+    "orientation": "any",
+    "lang": "en"
+}
+```
+`http://expelledskate.co.uk/wp-content/themes/expelled_theme/img/favicons/site.webmanifest`
 ---
 ## Has a `<meta name=”viewport”>` tag with width or initial-scale
+The head tag of each page includes favicons, title, and meta information.
+
+This is where the meta name viewport is defined to scale at 1.0.
+
+```
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+	</body>
+</html>
 ---
 ## Content is sized correctly for the viewport
 ---
 ## Web Application on Android Homescreen
 Introducing the users to concepts they already understand, such as shortcuts on home screens will help blur the line and create a smooth transition to PWA implementations.
 ---
-```jsx
-<button>
-```
+<iframe width="1800" height="900" src="https://expelledskate.co.uk" frameborder="0" allowfullscreen></iframe>
 ---
 # PWA Rocks
 https://pwa.rocks/
