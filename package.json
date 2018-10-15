@@ -5,9 +5,15 @@
 	"license": "MIT",
 	"dependencies": {
 		"mdx-deck": "^1.7.7",
-		"react-syntax-highlighter": "^8.0.1"
+		"react": "^16.5.2",
+		"react-audio-spectrum": "^0.0.9",
+		"react-live": "^1.11.0",
+		"react-mic": "^12.2.2",
+		"react-syntax-highlighter": "^8.0.1",
+		"styled-components": "^4.0.0"
 	},
 	"scripts": {
+		"build": "mdx-deck build deck.mdx",
 		"start": "mdx-deck deck.mdx"
 	}
 }
