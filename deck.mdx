@@ -46,6 +46,27 @@ All of these points would be valid...
 ---
 ## If this wasn't 2018.
 ---
+
+## What solutions do browsers have for storage?
+
+### Web Storage / Files - Local Storage
+Method of storing data locally like cookies, but for larger amounts of data.
+
+---
+
+## What solutions do browsers have for storage?
+
+### Database Storage / Data - IndexedDB
+An API to locate records either by their key using an index.
+
+A query language can be used with the API.
+
+import IndexedDB from './components/IndexedDB'
+
+<IndexedDB />
+
+---
+
 ## HTML & JS Webcam
 
 import Camera from './components/Camera'
@@ -70,10 +91,13 @@ import MotionSensor from './components/MotionSensor'
 <MotionSensor />
 
 ---
-## Wait a second, why do mobile applications exist?
-We are now seeing a rise in access to inputs from devices.
+## Inputs
 
-JavaScript APIs that focus on requesting data from inputs previously listed (microphones, cameras, motion sensors).
+* Camera ✅
+* Microphone ✅
+* Orientation/Tilt ✅
+* GPS ✅
+
 ---
 ## A PWA Case Study - George.com
 ![skeleton]( ./images/bottom_transition.png "skeleton")
