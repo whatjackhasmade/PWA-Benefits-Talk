@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Webcam = styled.video`
+	max-width: 800px;
 	width: 100%;
 `;
 
