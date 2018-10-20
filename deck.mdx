@@ -1,37 +1,60 @@
 # Progressive Web Applications: Blending Industries
+
 ---
+
 ## Blend, Merge, Connect
 With the rise in the use of mobile devices, there has been a clear divide between native mobile applications and online websites.
+
 ---
+
 ## Aims of this Presentation
 This presentation aims to inspire developers to improve their applications with cutting-edge technologies.
 
 Challenging industries and the decision to split into sub-segments within software development.
+
 ---
+
+## Obligatory "Who Is This Guy?"
+
+import JackPritchard from './components/JackPritchard'
+
+<JackPritchard/>
+
+---
+
 # Before We Begin
 ## Let's Define Our Industries
+
 ---
+
 ## Online Websites and Browser Applications
 Usually consisting of front-end languages such as HTML, CSS and JavaScript.
 
 With a back-end system built on PHP, .NET, or other serverside language.
+
 ---
+
 ## iOS, Android and Other Native Mobile Applications
-Seperate from websites, these applications are often coded in languages fitting per device.
+Seperate from websites, these applications are often coded in languages customary to the device.
 
 Java is commonly used for Android development and Swift for iOS.
+
 ---
+
 # Defined Industries
 ## Browser Applications vs Mobile Native Applications
+
 ---
+
 ## Why Do Mobile Applications Exist?
-Mobile applications exist as reliable solutions for creating applications with capabilities to store large amounts of data and files offline.
+Mobile applications solved problems, as a reliable solution for creating applications with capabilities to store large amounts of data and files offline.
 
 Most mobile applications can be used without an internet connection.
 
 Not to mention the access to inputs from your device such as microphones, cameras, and motion sensors.
 
 ---
+
 ## Accessible Inputs To The Browser?
 
 * Camera ❓
@@ -41,22 +64,24 @@ Not to mention the access to inputs from your device such as microphones, camera
 * Orientation/Tilt ❓
 
 * GPS ❓
+
 ---
 
 ## HTML & JS Webcam
 
 import Camera from './components/Camera'
 
+`navigator.getUserMedia({ audio: false, video: true }, trueFunction, falseFunction);`
+
 <Camera />
 
-`Navigator.getUserMedia()`
-
-`MediaDevices.getUserMedia()`
-
 ---
+
 ## HTML & JS Microphone
 
 import Microphone from './components/Microphone'
+
+`navigator.getUserMedia({ audio: true }, trueFunction, falseFunction);`
 
 <Microphone />
 ---
@@ -77,10 +102,14 @@ import Microphone from './components/Microphone'
 * GPS ✅
 ---
 
-## What solutions do browsers have for storage?
+## What Solutions Do Browsers Have For Storage?
 
-### Files - Service Workers
-Method of storing data locally like cookies, but for larger amounts of data.
+---
+
+## Files - Service Workers
+A service worker’s primary function is to intercept HTTP/HTTPS calls made by pages and return cached files.
+
+Essentially it's client-side caching.
 
 import ServiceWorker from './components/ServiceWorker'
 
@@ -88,12 +117,8 @@ import ServiceWorker from './components/ServiceWorker'
 
 ---
 
-## What solutions do browsers have for storage?
-
-### Data Storage - IndexedDB
-An API to locate records either by their key using an index.
-
-A query language can be used with the API.
+## Data Storage - IndexedDB
+IndexedDB is an API that allows developers to store or locate records in the browser directly.
 
 import IndexedDB from './components/IndexedDB'
 
