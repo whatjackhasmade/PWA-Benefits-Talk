@@ -84,13 +84,15 @@ import Microphone from './components/Microphone'
 `navigator.getUserMedia({ audio: true }, trueFunction, falseFunction);`
 
 <Microphone />
+
 ---
+
 ## Device Orientation
 
 <iframe width="1000" height="700" src="https://www.youtube.com/embed/Jbel5D1rKtc" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
 
-
 ---
+
 ## Inputs
 
 * Camera ✅
@@ -100,6 +102,7 @@ import Microphone from './components/Microphone'
 * Orientation/Tilt ✅
 
 * GPS ✅
+
 ---
 
 ## What Solutions Do Browsers Have For Storage?
@@ -107,17 +110,15 @@ import Microphone from './components/Microphone'
 ---
 
 ## Files - Service Workers
+
 A service worker’s primary function is to intercept HTTP/HTTPS calls made by pages and return cached files.
 
 Essentially it's client-side caching.
 
-import ServiceWorker from './components/ServiceWorker'
-
-<ServiceWorker />
-
 ---
 
 ## Data Storage - IndexedDB
+
 IndexedDB is an API that allows developers to store or locate records in the browser directly.
 
 import IndexedDB from './components/IndexedDB'
@@ -126,42 +127,101 @@ import IndexedDB from './components/IndexedDB'
 
 ---
 
+## Current State of The Web
+
+We are now entering an exciting time for the world wide web.
+
+With access to inputs otherwise reserved for software, and the ability to store large amounts of data or files for offline use, we are now given the power to replicate the power of offline tools.
+
+---
+
+## And So Enters PWA
+
+---
+
+## Progressive Web Applications
+
+Imagine a website that works offline and online.
+
+A website that can be accessed in-browser or as if it were a native app, anywhere in the world, anytime.
+
+---
+
+## Progressive Web Applications
+
+Progressive Web Applications leverage the technologies we've covered.
+
+Embracing the concept of offline storage of data and files.
+
+Accessible just as they would be any other piece of software.
+
+Not only that, but we now, in-browser have access to the same inputs that native software applications have.
+
+---
+
+## Progressive Web Applications
+
+"A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users." - ionicframework
+
+The term PWAs, coined by Google has seen a rise in popularity due to an increase in browser support for the essential technologies PWAs use.
+
+---
+
+## Visiting Google
+
+import Google from './components/Google'
+
+<Google />
+
+Fortunately I was given the opportunity to attend Google's team training days on Progressive Web Applications at their offices in London, back in 2017.
+
+---
+
+## Main Takeaways
+
+* Progressive Web Applications aren't a new trend.
+* They're a new concept that build on existing technologies.
+* Caching information and presenting websites to users in a familiar design.
+* A website can benefit from PWA technologies, even if not a complete PWA.
+
+---
+
+## Enough Talk, Let's See a PWA
+
+---
+
 ## A PWA Case Study - George.com
+
 ![skeleton]( ./images/bottom_transition.png "skeleton")
 ![loaded]( ./images/bottom_listing.png "loaded")
+
+Familiar Design?
+
 ---
+
 ## A PWA Case Study - George.com
 * 3.8x - Faster average page load time
 * 2x - Lower bounce rate
 * 31% - Increase in Conversion Rate
 * 20% - More page views per visit
 * 28% - Longer average time on site for visits from Home screen
----
-## Visiting Google (Circa 2017)
-INSERT IMAGE OF ME AT GOOGLE
----
-## Main Takeaways
-Progressive Web Applications aren't a new trend.
-
-They're a new concept that build on existing technologies.
-
-Caching information and presenting websites to users in a familiar design.
-
-A website can benefit from PWA technologies, even if not a complete PWA.
----
-## New Support
-Since iOS 11.3, Apple now has support for service workers and progressive web application methods.
-
-This update in support will increase the scope of users that are able to take advantage of progressive website application technologies (service worker, manifest files, etc.).
----
-## New Support
-"Developers also have the option of proactively submitting PWAs for inclusion in the Microsoft Store.".
-
-
-Not only are website developers creating PWAs for the world wide web, mobile phones, but also desktop operating systems.
 
 ---
-## What needs be implemented to be considered a PWA?
+
+## Cool, Let's Make Our Own
+### Expelled Skateboarding
+
+---
+
+## Expelled Skateboarding Demo
+
+<iframe width="1000" height="700" src="https://www.youtube.com/embed/FIDP-_xhmj8" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+
+---
+
+## Before We Dive In
+### What needs be implemented to be considered a PWA?
+
 * Registers a service worker
 * Responds with a 200 when offline
 * Contains some content when JavaScript is not available
@@ -173,131 +233,259 @@ Not only are website developers creating PWAs for the world wide web, mobile pho
 * Has a `<meta name=”viewport”>` tag with width or initial-scale
 * Content is sized correctly for the viewport
 * Web Application on Android Homescreen
----
-## Expelled Skateboarding
----
-## Expelled Skateboarding Demo
 
-<iframe width="1000" height="700" src="https://www.youtube.com/embed/FIDP-_xhmj8" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
 ---
+
+## How Are We Analysing The Project?
+
+Google Chrome is host to numerous developer tools.
+
+One of which is the ability to audit a webpage.
+
+---
+
 ## Registers a service worker
+
 Service workers act as a cache for the storage of web files in the browser, preventing the need for files to be downloaded several times on a site.
 
 Service workers are enabled through the use of Javascript and will cache files in the directories specified.
----
-## Registers a service worker
-```
-const cacheName = 'files';
-addEventListener('fetch', fetchEvent => {
-	const request = fetchEvent.request;
 
-	if (fetchEvent.request.url.includes('expelled_theme')) {
-		if (request.method !== 'GET') {
-			return;
-		}
-		fetchEvent.respondWith(async function() {
-			const responseFromFetch = fetch(request);
-			fetchEvent.waitUntil(async function () {
-				const responseCopy = (await responseFromFetch.clone();
-				const myCahce = await cache.open(cacheName);
-				await myCache.put(request, responseCopy);
-			}());
-			if (request.headers.get('Accept')).includes('text/html')) {
-				try {
-					return await responseFromFetch;
-				} catch (error) {
-					return caches.match(request);
-				}
-			} else {
-				const responseFromCache = await caches.match(request);
-				return responseFromCache || responseFromFetch;
-			}
-		}());
-	}
-});
-```
 ---
+
 ## Registers a service worker
+
+```
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+		navigator.serviceWorker.register('https://expelledskate.co.uk/sw.js').then(function(registration) {
+			console.log('ServiceWorker registration successful with scope: ', registration.scope);
+		}, function(err) {
+			console.log('ServiceWorker registration failed: ', err);
+		});
+	});
+}
+```
+
+---
+
+## Registers a service worker
+
 ![Google Chrome console.log showing the installation of service worker]( ./images/service-worker-console.png "Google Chrome console.log showing the installation of service worker")
----
-## Responds with a 200 when offline
-The PWA audits carried out in Google Chrome's Lighthouse indicates that the site responds with a 200 HTTP code.
 
-Testing shows that the site responds with an offline label and checkbox in the URL bar when accessing the site offline.
+A service worker has been registered, this service worker is storing assets such as images, stylesheets, scripts and HTML files for offline use and to increase performance online.
+
 ---
+
 ## Responds with a 200 when offline
-![Return 200 HTTP status code]( ./images/200.png "Return 200 HTTP status code")
+
+When navigated to without an internet connection, the site needs to respond with a 200 HTTP code.
+
+Provide a fallback offline `.html` alternative if the site is built on Server side rendering languages.
+
 ---
+
+## Responds with a 200 when offline
+
+import Code200 from './components/Code200'
+
+<Code200/>
+
+---
+
 ## Contains some content when JavaScript is not available
+
 When JavaScript is disabled in-browser, the following requests are made and complete when accessing the homepage of the Expelled Skateboarding site.
----
-## Contains some content when JavaScript is not available
-![Return 200 HTTP status code]( ./images/200.png "Return 200 HTTP status code")
----
-## Uses HTTPS
-The Expelled Skateboarding site is hosted by DigitalOcean on a server running Ubuntu 16.04.
 
-The server uses Apache to configure the domain network routing.
+---
+
+## Contains some content when JavaScript is not available
+
+<iframe width="1000" height="700" src="https://www.youtube.com/embed/gaJ9Th40rWs" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+
+---
+
+## Uses HTTPS
+
+The Expelled Skateboarding site is hosted by DigitalOcean on a Virtual Private Server running Ubuntu 16.04.
+
+The server uses Apache to configure the domain routing.
 
 An SSL certificate was generated for the domain https://expelledskate.co.uk and added to the Apache configuration.
+
 ---
+
 ## Redirects HTTP traffic to HTTPS
-Once registered, WordPress settings were updated to configure the CMS to assume HTTPS availability on all pages and field settings.
 
 There are no areas of the site that request HTTP protocols internally.
 
-With most third-party scripts supporting HTTPS, the site is fully secure and uses HTTPS in all requests.
+```
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+```
+
+To ensure all requests on the site are made using HTTPS, Apache has been configured accordingly.
+
 ---
+
 ## The user can be prompted to install the web app
-Users of the Expelled Skateboarding website may be prompted on either desktop or mobile devices to notify them of the option to install the web app on their machine.
+
+Users of the Expelled Skateboarding website may be prompted on mobile devices to notify them of the option to install the web app on their device.
 
 The minimum requirement for prompting of installation of a web app is a web manifest file.
+
+`http://expelledskate.co.uk/wp-content/themes/expelled_theme/img/favicons/site.webmanifest`
+
 ---
+
 ## Configured for a custom splash screen
-A custom splash screen has been configured in the manifest file for the website.
 
-A ‘background_color’ property has been defined with the site’s primary colour of “#071930”.
+A custom splash screen has been configured in the manifest file.
 
-As well as an icons set at 192px by 192px, 384px by 384px and 512px by 512px.
+Icons are set at 192px by 192px, 384px by 384px and 512px by 512px.
+
 ---
-## Address bar matches brand colours
-Again, the address bar has been set to match the brand colours, setting both the `background_color` and `theme_color` property to `#071930`.
+
+## Configured for a custom splash screen
+
+```
+icons: [
+	{
+		src: "https://expelledskate.co.uk/wp-content/themes/expelled_theme/img/favicons/android-chrome-192x192.png",
+		sizes: "192x192",
+		type: "image/png"
+	},
+	{
+		src: "https://expelledskate.co.uk/wp-content/themes/expelled_theme/img/favicons/android-chrome-384x384.png",
+		sizes: "384x384",
+		type: "image/png"
+	},
+	{
+		src: "https://expelledskate.co.uk/wp-content/themes/expelled_theme/img/favicons/android-chrome-512x512.png",
+		sizes: "512x512",
+		type: "image/png"
+	}
+]
 ```
 
+---
+
+## Address bar matches brand colours
+
+Again, the address bar has been set to match the brand colours, setting both the `background_color` and `theme_color` property to `#071930`.
+
+```
 {
-    "name": "Expelled Skateboarding",
-    "short_name": "Expelled",
     "background_color": "#071930",
     "theme_color": "#071930",
-    "display": "fullscreen",
-    "start_url": "https://expelledskate.co.uk/",
-    "orientation": "any",
-    "lang": "en"
 }
 ```
-`http://expelledskate.co.uk/wp-content/themes/expelled_theme/img/favicons/site.webmanifest`
+
 ---
+
 ## Has a `<meta name=”viewport”>` tag with width or initial-scale
 The head tag of each page includes favicons, title, and meta information.
 
 This is where the meta name viewport is defined to scale at 1.0.
 
 ```
-<html>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
-	</body>
-</html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+```
+
 ---
+
 ## Content is sized correctly for the viewport
+
+The Expelled website is built mobile first.
+
+Images and videos resize, no content overspills on the page.
+
 ---
+
 ## Web Application on Android Homescreen
-Introducing the users to concepts they already understand, such as shortcuts on home screens will help blur the line and create a smooth transition to PWA implementations.
+
+Including a Web Application on Android Homescreen, introduces users to concepts they already understand.
+
+This includes shortcuts on home screens, that will help blur the line between a native mobile app and a progressive web app.
+
+This creates a smooth transition to PWA implementations.
+
 ---
+
 <iframe width="1800" height="900" src="https://expelledskate.co.uk" frameBorder="0" allowFullScreen></iframe>
+
 ---
-# PWA Rocks
-https://pwa.rocks/
+
+## Recap
+
+* Registers a service worker ✅
+* Responds with a 200 when offline ✅
+* Contains some content when JavaScript is not available ✅
+* Uses HTTPS ✅
+* Redirects HTTP traffic to HTTPS ✅
+* The user can be prompted to install the web app ✅
+* Configured for a custom splash screen ✅
+* Address bar matches brand colours ✅
+* Has a `<meta name=”viewport”>` tag with width or initial-scale ✅
+* Content is sized correctly for the viewport ✅
+* Web Application on Android Homescreen ✅
+
+---
+
+## New Support
+### Apple
+
+Since iOS 11.3, Apple now has support for service workers and progressive web application technologies.
+
+This update in support will increase the scope of users that are able to take advantage of progressive website application technologies (service worker, manifest files, etc.).
+
+---
+
+## New Support
+### Microsoft
+
+import MSStore from './components/MSStore'
+
+<MSStore/>
+
+Not only are website developers creating PWAs for the world wide web, mobile phones, but also desktop operating systems.
+
+---
+
+## PWA Rocks
+
+<iframe width="1800" height="800" src="https://pwa.rocks/" frameBorder="0" allowFullScreen></iframe>
+
+---
+
+## Google Case Studies
+
+https://developers.google.com/web/showcase/
+
+---
+
+# Conclusion
+
+Hopefully this talk has given you some food for thought.
+
+I haven't presented a step-by-step tutorial on building a PWA.
+
+I have simply touched on each requirement necessary to build a PWA in 2018.
+
+---
+
+# Conclusion
+
+If you, like myself, are excited by what these new concepts and technologies allow developers to create, then I suggest further research into how you can implement a service worker into your sites today.
+
+Everyone benefits from them, even sites that don't have offline functionality.
+
+---
+
+# 🗣
+# Any Questions?
+## Jack Pritchard
+@whatjackhasmade
