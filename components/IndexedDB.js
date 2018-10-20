@@ -105,18 +105,6 @@ export default class IndexedDB extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>
-				<Form>
-					<label>Name</label>
-					<input type="text" />
-					<label>Role</label>
-					<input type="text" />
-					<label>Description</label>
-					<input type="text" />
-					<button onClick={this.addData.bind(this)}>Add some data</button>
-				</Form>
-			</div>
-		);
+		return <div />;
 	}
 }

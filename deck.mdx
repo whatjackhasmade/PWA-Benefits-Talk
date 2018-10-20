@@ -1,5 +1,3 @@
-export { swiss as theme } from 'mdx-deck/themes'
-
 # Progressive Web Applications: Blending Industries
 ---
 ## Blend, Merge, Connect
@@ -8,63 +6,41 @@ With the rise in the use of mobile devices, there has been a clear divide betwee
 ## Aims of this Presentation
 This presentation aims to inspire developers to improve their applications with cutting-edge technologies.
 
-Challenging industries and the need for creating new applications instead of creating adaptable solutions.
+Challenging industries and the decision to split into sub-segments within software development.
 ---
+# Before We Begin
 ## Let's Define Our Industries
 ---
-## Online Websites and Applications
+## Online Websites and Browser Applications
 Usually consisting of front-end languages such as HTML, CSS and JavaScript.
 
 With a back-end system built on PHP, .NET, or other serverside language.
 ---
-## Online Websites and Applications: Responsive Design
-Since 2013, RWD (Responsive Website Design) has been the hot trend.
-
-Heck, I wouldn't even call it a trend!
-
-It's an essential principle of web development with most users now using their mobile device to browser the internet.
----
 ## iOS, Android and Other Native Mobile Applications
-In June 2007 the first iPhone was brought to market.
-
-The invention gave birth to a new industry, mobile applications.
-
-Seperate from responsive websites, the applications are often coded in languages fitting per device.
+Seperate from websites, these applications are often coded in languages fitting per device.
 
 Java is commonly used for Android development and Swift for iOS.
 ---
-## Wait a second, why do mobile applications exist?
-Mobile applications exist as they are a reliable method of creating applications which can store large amounts of data and files offline.
+# Defined Industries
+## Browser Applications vs Mobile Native Applications
+---
+## Why Do Mobile Applications Exist?
+Mobile applications exist as reliable solutions for creating applications with capabilities to store large amounts of data and files offline.
 
 Most mobile applications can be used without an internet connection.
 
-Not to mention the access to inputs from your device.
-
-These inputs include microphones, cameras, motion sensors, etc.
-
-All of these points would be valid...
----
-## If this wasn't 2018.
----
-
-## What solutions do browsers have for storage?
-
-### Web Storage / Files - Local Storage
-Method of storing data locally like cookies, but for larger amounts of data.
+Not to mention the access to inputs from your device such as microphones, cameras, and motion sensors.
 
 ---
+## Accessible Inputs To The Browser?
 
-## What solutions do browsers have for storage?
+* Camera ❓
 
-### Database Storage / Data - IndexedDB
-An API to locate records either by their key using an index.
+* Microphone ❓
 
-A query language can be used with the API.
+* Orientation/Tilt ❓
 
-import IndexedDB from './components/IndexedDB'
-
-<IndexedDB />
-
+* GPS ❓
 ---
 
 ## HTML & JS Webcam
@@ -86,19 +62,45 @@ import Microphone from './components/Microphone'
 ---
 ## Device Orientation
 
-import MotionSensor from './components/MotionSensor'
+<iframe width="1000" height="700" src="https://www.youtube.com/embed/Jbel5D1rKtc" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
 
-<MotionSensor />
 
 ---
 ## Inputs
 
 * Camera ✅
+
 * Microphone ✅
+
 * Orientation/Tilt ✅
+
 * GPS ✅
+---
+
+## What solutions do browsers have for storage?
+
+### Files - Service Workers
+Method of storing data locally like cookies, but for larger amounts of data.
+
+import ServiceWorker from './components/ServiceWorker'
+
+<ServiceWorker />
 
 ---
+
+## What solutions do browsers have for storage?
+
+### Data Storage - IndexedDB
+An API to locate records either by their key using an index.
+
+A query language can be used with the API.
+
+import IndexedDB from './components/IndexedDB'
+
+<IndexedDB />
+
+---
+
 ## A PWA Case Study - George.com
 ![skeleton]( ./images/bottom_transition.png "skeleton")
 ![loaded]( ./images/bottom_listing.png "loaded")
@@ -128,9 +130,13 @@ Since iOS 11.3, Apple now has support for service workers and progressive web ap
 This update in support will increase the scope of users that are able to take advantage of progressive website application technologies (service worker, manifest files, etc.).
 ---
 ## New Support
-In April of 2018, the first PWA support for windows machines was released to the Windows Store. Not only are developers creating PWAs for the world wide web, mobile phones, but also desktop operating systems.
+"Developers also have the option of proactively submitting PWAs for inclusion in the Microsoft Store.".
+
+
+Not only are website developers creating PWAs for the world wide web, mobile phones, but also desktop operating systems.
+
 ---
-## Core Technologies
+## What needs be implemented to be considered a PWA?
 * Registers a service worker
 * Responds with a 200 when offline
 * Contains some content when JavaScript is not available

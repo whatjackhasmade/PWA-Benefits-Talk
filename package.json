@@ -7,6 +7,7 @@
 		"mdx-deck": "^1.7.7",
 		"react": "^16.5.2",
 		"react-audio-spectrum": "^0.0.9",
+		"react-helmet": "^5.2.0",
 		"react-live": "^1.11.0",
 		"react-mic": "^12.2.2",
 		"react-syntax-highlighter": "^8.0.1",
