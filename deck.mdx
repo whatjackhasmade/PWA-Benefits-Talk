@@ -2,6 +2,14 @@
 
 ---
 
+## Obligatory "Who Is This Guy?"
+
+import JackPritchard from './components/JackPritchard'
+
+<JackPritchard/>
+
+---
+
 ## Blend, Merge, Connect
 With the rise in the use of mobile devices, there has been a clear divide between native mobile applications and online websites.
 
@@ -11,14 +19,6 @@ With the rise in the use of mobile devices, there has been a clear divide betwee
 This presentation aims to inspire developers to improve their applications with cutting-edge technologies.
 
 Challenging industries and the decision to split into sub-segments within software development.
-
----
-
-## Obligatory "Who Is This Guy?"
-
-import JackPritchard from './components/JackPritchard'
-
-<JackPritchard/>
 
 ---
 
@@ -47,11 +47,25 @@ Java is commonly used for Android development and Swift for iOS.
 ---
 
 ## Why Do Mobile Applications Exist?
-Mobile applications solved problems, as a reliable solution for creating applications with capabilities to store large amounts of data and files offline.
+Mobile applications solved problems, providing a reliable solution for creating applications with capabilities to store large amounts of data and files offline.
 
 Most mobile applications can be used without an internet connection.
 
 Not to mention the access to inputs from your device such as microphones, cameras, and motion sensors.
+
+---
+
+## New Problems, Old Solutions
+
+The first commercially successful smartphone was released in 2007.
+
+Almost a decade later, web technologies have come a long way.
+
+Challenging the need for native applications to solve problems.
+
+---
+
+## So What Can the Web Do?
 
 ---
 
@@ -105,15 +119,31 @@ import Microphone from './components/Microphone'
 
 ---
 
+## So We've Got Our Inputs
+
+---
+
 ## What Solutions Do Browsers Have For Storage?
 
 ---
 
 ## Files - Service Workers
 
-A service worker’s primary function is to intercept HTTP/HTTPS calls made by pages and return cached files.
+A service worker’s primary function is to intercept HTTP/HTTPS calls made by pages.
+
+Service workers essentially act as proxy servers that sit between web applications, and the browser and network (when available).
 
 Essentially it's client-side caching.
+
+---
+
+## Files - Service Workers
+
+import PWADiagram from './components/PWADiagram'
+
+<PWADiagram />
+
+##### Source: https://pjagajitprusty.github.io/PWD/
 
 ---
 
@@ -464,6 +494,24 @@ Not only are website developers creating PWAs for the world wide web, mobile pho
 ## Google Case Studies
 
 https://developers.google.com/web/showcase/
+
+---
+
+## Where to Use PWAs?
+
+PWAs are beneficial to the majority of websites.
+
+No user is going to suffer from cached files, unless files are constantly changing on a website.
+
+In which case, if approached correctly, service workers can invalidate the cache and present new files.
+
+---
+
+## Where not to Use PWAs?
+
+* Large applications such as mobile video games
+* Existing client projects - Sometimes large refactoring
+* With clients that don't share an understanding on the benefits of PWAs
 
 ---
 
