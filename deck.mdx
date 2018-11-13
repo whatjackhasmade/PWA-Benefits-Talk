@@ -4,18 +4,20 @@
 
 ## Obligatory "Who Is This Guy?"
 
-import JackPritchard from './components/JackPritchard'
+import JackPritchard from "./components/JackPritchard";
 
-<JackPritchard/>
+<JackPritchard />
 
 ---
 
 ## Blend, Merge, Connect
+
 With the rise in the use of mobile devices, there has been a clear divide between native mobile applications and online websites.
 
 ---
 
 ## Aims of this Presentation
+
 This presentation aims to inspire developers to improve their applications with cutting-edge technologies.
 
 Challenging industries and the decision to split into sub-segments within software development.
@@ -23,11 +25,13 @@ Challenging industries and the decision to split into sub-segments within softwa
 ---
 
 # Before We Begin
+
 ## Let's Define Our Industries
 
 ---
 
 ## Online Websites and Browser Applications
+
 Usually consisting of front-end languages such as HTML, CSS and JavaScript.
 
 With a back-end system built on PHP, .NET, or other serverside language.
@@ -35,6 +39,7 @@ With a back-end system built on PHP, .NET, or other serverside language.
 ---
 
 ## iOS, Android and Other Native Mobile Applications
+
 Seperate from websites, these applications are often coded in languages customary to the device.
 
 Java is commonly used for Android development and Swift for iOS.
@@ -42,11 +47,13 @@ Java is commonly used for Android development and Swift for iOS.
 ---
 
 # Defined Industries
+
 ## Browser Applications vs Mobile Native Applications
 
 ---
 
 ## Why Do Mobile Applications Exist?
+
 Mobile applications solved problems, providing a reliable solution for creating applications with capabilities to store large amounts of data and files offline.
 
 Most mobile applications can be used without an internet connection.
@@ -71,19 +78,19 @@ Challenging the need for native applications to solve problems.
 
 ## Accessible Inputs To The Browser?
 
-* Camera ❓
+- Camera ❓
 
-* Microphone ❓
+- Microphone ❓
 
-* Orientation/Tilt ❓
+- Orientation/Tilt ❓
 
-* GPS ❓
+- GPS ❓
 
 ---
 
 ## HTML & JS Webcam
 
-import Camera from './components/Camera'
+import Camera from "./components/Camera";
 
 `navigator.getUserMedia({ audio: false, video: true }, trueFunction, falseFunction);`
 
@@ -93,7 +100,7 @@ import Camera from './components/Camera'
 
 ## HTML & JS Microphone
 
-import Microphone from './components/Microphone'
+import Microphone from "./components/Microphone";
 
 `navigator.getUserMedia({ audio: true }, trueFunction, falseFunction);`
 
@@ -103,19 +110,26 @@ import Microphone from './components/Microphone'
 
 ## Device Orientation
 
-<iframe width="1000" height="700" src="https://www.youtube.com/embed/Jbel5D1rKtc" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+<iframe
+	width="1000"
+	height="700"
+	src="https://www.youtube.com/embed/Jbel5D1rKtc"
+	frameBorder="0"
+	allow="autoplay; encrypted-media"
+	allowFullScreen
+/>
 
 ---
 
 ## Inputs
 
-* Camera ✅
+- Camera ✅
 
-* Microphone ✅
+- Microphone ✅
 
-* Orientation/Tilt ✅
+- Orientation/Tilt ✅
 
-* GPS ✅
+- GPS ✅
 
 ---
 
@@ -139,7 +153,7 @@ Essentially it's client-side caching.
 
 ## Files - Service Workers
 
-import PWADiagram from './components/PWADiagram'
+import PWADiagram from "./components/PWADiagram";
 
 <PWADiagram />
 
@@ -151,7 +165,7 @@ import PWADiagram from './components/PWADiagram'
 
 IndexedDB is an API that allows developers to store or locate records in the browser directly.
 
-import IndexedDB from './components/IndexedDB'
+import IndexedDB from "./components/IndexedDB";
 
 <IndexedDB />
 
@@ -193,13 +207,13 @@ Not only that, but we now, in-browser have access to the same inputs that native
 
 "A Progressive Web App (PWA) is a web app that uses modern web capabilities to deliver an app-like experience to users." - ionicframework
 
-The term PWAs, coined by Google has seen a rise in popularity due to an increase in browser support for the essential technologies PWAs use.
+The term PWA, coined by Google has seen a rise in popularity due to an increase in browser support for the essential technologies PWAs use.
 
 ---
 
 ## Visiting Google
 
-import Google from './components/Google'
+import Google from "./components/Google";
 
 <Google />
 
@@ -209,60 +223,91 @@ Fortunately I was given the opportunity to attend Google's team training days on
 
 ## Main Takeaways
 
-* Progressive Web Applications aren't a new trend.
-* They're a new concept that build on existing technologies.
-* Caching information and presenting websites to users in a familiar design.
-* A website can benefit from PWA technologies, even if not a complete PWA.
+- Progressive Web Applications aren't a new trend.
+- They're a new concept that build on existing technologies.
+- Caching information and presenting websites to users in a familiar design.
+- A website can benefit from PWA technologies, even if not a complete PWA.
 
 ---
 
-## Enough Talk, Let's See a PWA
+## Enough Talk, Let's See Some PWAs
 
 ---
 
 ## A PWA Case Study - George.com
 
-![skeleton]( ./images/bottom_transition.png "skeleton")
-![loaded]( ./images/bottom_listing.png "loaded")
+![skeleton](./images/bottom_transition.png "skeleton")
+
+![loaded](./images/bottom_listing.png "loaded")
 
 Familiar Design?
 
 ---
 
 ## A PWA Case Study - George.com
-* 3.8x - Faster average page load time
-* 2x - Lower bounce rate
-* 31% - Increase in Conversion Rate
-* 20% - More page views per visit
-* 28% - Longer average time on site for visits from Home screen
+
+- 3.8x - Faster average page load time
+- 2x - Lower bounce rate
+- 31% - Increase in Conversion Rate
+- 20% - More page views per visit
+- 28% - Longer average time on site for visits from Home screen
+
+---
+
+## PWA Case Study - app.starbucks.com
+
+import StarbucksTweet from "./components/StarbucksTweet";
+
+<StarbucksTweet />
+
+---
+
+## PWA Case Study - app.starbucks.com
+
+Starbucks iOS: 146MB // Starbucks PWA: ~600KB
+
+It’s 0.4% of the size.
+
+The PWA is less than 1/243 the size of the Starbucks iOS application.
+
+Then, of course on iOS it then also still has to install and boot up!
 
 ---
 
 ## Cool, Let's Make Our Own
+
 ### Expelled Skateboarding
 
 ---
 
 ## Expelled Skateboarding Demo
 
-<iframe width="1000" height="700" src="https://www.youtube.com/embed/FIDP-_xhmj8" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+<iframe
+	width="1000"
+	height="700"
+	src="https://www.youtube.com/embed/FIDP-_xhmj8"
+	frameBorder="0"
+	allow="autoplay; encrypted-media"
+	allowFullScreen
+/>
 
 ---
 
 ## Before We Dive In
+
 ### What needs be implemented to be considered a PWA?
 
-* Registers a service worker
-* Responds with a 200 when offline
-* Contains some content when JavaScript is not available
-* Uses HTTPS
-* Redirects HTTP traffic to HTTPS
-* The user can be prompted to install the web app
-* Configured for a custom splash screen
-* Address bar matches brand colours
-* Has a `<meta name=”viewport”>` tag with width or initial-scale
-* Content is sized correctly for the viewport
-* Web Application on Android Homescreen
+- Registers a service worker
+- Responds with a 200 when offline
+- Contains some content when JavaScript is not available
+- Uses HTTPS
+- Redirects HTTP traffic to HTTPS
+- The user can be prompted to install the web app
+- Configured for a custom splash screen
+- Address bar matches brand colours
+- Has a `<meta name=”viewport”>` tag with width or initial-scale
+- Content is sized correctly for the viewport
+- Web Application on Android Homescreen
 
 ---
 
@@ -300,7 +345,7 @@ if ('serviceWorker' in navigator) {
 
 ## Registers a service worker
 
-![Google Chrome console.log showing the installation of service worker]( ./images/service-worker-console.png "Google Chrome console.log showing the installation of service worker")
+![Google Chrome console.log showing the installation of service worker](./images/service-worker-console.png "Google Chrome console.log showing the installation of service worker")
 
 A service worker has been registered, this service worker is storing assets such as images, stylesheets, scripts and HTML files for offline use and to increase performance online.
 
@@ -316,9 +361,9 @@ Provide a fallback offline `.html` alternative if the site is built on Server si
 
 ## Responds with a 200 when offline
 
-import Code200 from './components/Code200'
+import Code200 from "./components/Code200";
 
-<Code200/>
+<Code200 />
 
 ---
 
@@ -330,7 +375,14 @@ When JavaScript is disabled in-browser, the following requests are made and comp
 
 ## Contains some content when JavaScript is not available
 
-<iframe width="1000" height="700" src="https://www.youtube.com/embed/gaJ9Th40rWs" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
+<iframe
+	width="1000"
+	height="700"
+	src="https://www.youtube.com/embed/gaJ9Th40rWs"
+	frameBorder="0"
+	allow="autoplay; encrypted-media"
+	allowFullScreen
+/>
 
 ---
 
@@ -414,6 +466,7 @@ Again, the address bar has been set to match the brand colours, setting both the
 ---
 
 ## Has a `<meta name=”viewport”>` tag with width or initial-scale
+
 The head tag of each page includes favicons, title, and meta information.
 
 This is where the meta name viewport is defined to scale at 1.0.
@@ -445,28 +498,57 @@ This creates a smooth transition to PWA implementations.
 
 ---
 
-<iframe width="1800" height="900" src="https://expelledskate.co.uk" frameBorder="0" allowFullScreen></iframe>
+<iframe
+	width="1800"
+	height="900"
+	src="https://expelledskate.co.uk"
+	frameBorder="0"
+	allowFullScreen
+/>
 
 ---
 
 ## Recap
 
-* Registers a service worker ✅
-* Responds with a 200 when offline ✅
-* Contains some content when JavaScript is not available ✅
-* Uses HTTPS ✅
-* Redirects HTTP traffic to HTTPS ✅
-* The user can be prompted to install the web app ✅
-* Configured for a custom splash screen ✅
-* Address bar matches brand colours ✅
-* Has a `<meta name=”viewport”>` tag with width or initial-scale ✅
-* Content is sized correctly for the viewport ✅
-* Web Application on Android Homescreen ✅
+- Registers a service worker ✅
+- Responds with a 200 when offline ✅
+- Contains some content when JavaScript is not available ✅
+- Uses HTTPS ✅
+- Redirects HTTP traffic to HTTPS ✅
+- The user can be prompted to install the web app ✅
+- Configured for a custom splash screen ✅
+- Address bar matches brand colours ✅
+- Has a `<meta name=”viewport”>` tag with width or initial-scale ✅
+- Content is sized correctly for the viewport ✅
+- Web Application on Android Homescreen ✅
 
 ---
 
-## New Support
-### Apple
+## Are PWAs Compatible? - Service Workers
+
+<iframe
+	width="1800"
+	height="800"
+	src="https://jakearchibald.github.io/isserviceworkerready/index.html"
+	frameBorder="0"
+	allowFullScreen
+/>
+
+---
+
+## Are PWAs Compatible? - Web Manifest Files
+
+<iframe
+	width="1800"
+	height="800"
+	src="https://caniuse.com/#feat=web-app-manifest"
+	frameBorder="0"
+	allowFullScreen
+/>
+
+---
+
+## New Support - Apple
 
 Since iOS 11.3, Apple now has support for service workers and progressive web application technologies.
 
@@ -474,12 +556,11 @@ This update in support will increase the scope of users that are able to take ad
 
 ---
 
-## New Support
-### Microsoft
+## New Support - Microsoft
 
-import MSStore from './components/MSStore'
+import MSStore from "./components/MSStore";
 
-<MSStore/>
+<MSStore />
 
 Not only are website developers creating PWAs for the world wide web, mobile phones, but also desktop operating systems.
 
@@ -487,13 +568,24 @@ Not only are website developers creating PWAs for the world wide web, mobile pho
 
 ## PWA Rocks
 
-<iframe width="1800" height="800" src="https://pwa.rocks/" frameBorder="0" allowFullScreen></iframe>
+<iframe
+	width="1800"
+	height="800"
+	src="https://pwa.rocks/"
+	frameBorder="0"
+	allowFullScreen
+/>
 
 ---
 
-## Google Case Studies
+## Further Learning
 
-https://developers.google.com/web/showcase/
+- Henrik Joreteg - https://joreteg.com/blog/betting-on-the-web
+- Google Case Studies - https://developers.google.com/web/showcase/
+- Jeremy Keith - https://abookapart.com/products/going-offline
+- Microsoft PWAs - https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/get-started
+- PWA Stats - https://www.pwastats.com/
+- React PWA Tutorial - https://medium.com/front-end-hacking/build-a-realtime-pwa-with-react-99e7b0fd3270
 
 ---
 
@@ -509,9 +601,21 @@ In which case, if approached correctly, service workers can invalidate the cache
 
 ## Where not to Use PWAs?
 
-* Large applications such as mobile video games
-* Existing client projects - Sometimes large refactoring
-* With clients that don't share an understanding on the benefits of PWAs
+- Large applications such as mobile video games
+- Existing client projects - Sometimes large refactoring
+- With clients that don't share an understanding on the benefits of PWAs
+
+---
+
+## Bonus Slide: Style like a native application
+
+<iframe
+	width="1800"
+	height="800"
+	src="https://framework7.io/"
+	frameBorder="0"
+	allowFullScreen
+/>
 
 ---
 
@@ -534,6 +638,9 @@ Everyone benefits from them, even sites that don't have offline functionality.
 ---
 
 # 🗣
+
 # Any Questions?
+
 ## Jack Pritchard
+
 @whatjackhasmade
